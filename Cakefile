@@ -2,6 +2,10 @@
 {spawn} = require 'child_process'
 
 task 'jade', 'Compile Jade files from src/ to ./', ->
+  build 'jade', ['-O', '.', '-P', 'src']
+
+
+task 'jade:watch', 'Compile Jade files from src/ to ./', ->
   build 'jade', ['-O', '.', '-P', '-w', 'src']
 
 
@@ -12,6 +16,10 @@ task 'jade:production', 'Compile Jade files from src/ to ./ with minifying', ->
 
 
 task 'stylus', 'Compile CSS files from src/css to css', ->
+  build 'stylus', ['-o', 'css', 'src/css']
+
+
+task 'stylus:watch', 'Compile CSS files from src/css to css', ->
   build 'stylus', ['-o', 'css', '-w', 'src/css']
 
 
@@ -22,15 +30,18 @@ task 'stylus:production', 'Compile CSS files from src/css to css with minifying'
 
 
 task 'coffee', 'Compile CoffeeScript files from src to ./', ->
+  build 'coffee', ['-c', '-o', '.', 'src']
+
+task 'coffee:watch', 'Compile CoffeeScript files from src to ./', ->
   build 'coffee', ['-c', '-o', '.', '-w', 'src']
-  
+
   
   
   
 task 'watch', 'Watch for all changes', ->
-  invoke 'jade'
-  invoke 'stylus'
-  invoke 'coffee'
+  invoke 'jade:watch'
+  invoke 'stylus:watch'
+  invoke 'coffee:watch'
 
 
 
