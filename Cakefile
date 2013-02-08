@@ -5,7 +5,7 @@ build = (cmd, args, callback) ->
 
   coffee = spawn cmd, args
 
-  coffee.stderr.on 'error', (error) ->
+  coffee.stderr.on 'data', (error) ->
     process.stderr.write error.toString()
 
   coffee.stdout.on 'data', (data) ->
