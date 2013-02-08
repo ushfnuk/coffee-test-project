@@ -1,0 +1,13 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+h1 {
+  font-weight: normal;
+  padding: 0;
+}
+h1:hover {
+  color: #008000;
+  font-weight: bold;
+}
