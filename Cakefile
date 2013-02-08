@@ -8,13 +8,13 @@ task 'jade:production', 'Compile Jade files from src/ to ./ with minifying', ->
   build 'jade', ['-O', '.', 'src']
 
 task 'stylus', 'Compile CSS files from src/css to css', ->
-  build 'stylus', ['-o', 'css', '-I', 'src']
+  build 'stylus', ['-o', '.', 'src']
 
 task 'stylus:production', 'Compile CSS files from src/css to css with minifying', ->
-  build 'stylus', ['-c', '-o', 'css', '-I', 'src']
+  build 'stylus', ['-c', '-o', '.', 'src']
 
 task 'coffee', 'Compile CoffeeScript files from src to ./', ->
-  build 'coffee', ['-c', '-o', 'js', 'src']
+  build 'coffee', ['-c', '-o', '.', 'src']
 
 build = (cmd, args, callback) ->
 
