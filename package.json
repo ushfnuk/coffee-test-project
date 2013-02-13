@@ -1,0 +1,10 @@
+{
+  "name": "coffee-test-project",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "coffee-script": "*",
+    "jade": "*",
+    "stylus": "*"
+  }
+}
